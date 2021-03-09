@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="base.css">
+  <title>Introdução à Programação - Exercício 06</title>
+</head>
+<body>
+  <h1>Exercício 06</h1>
+  <p>Calcula a Equação de 2º Grau usando a Fórmula de Bhaskara.</p>
+
+  <form id="form">
+    <input id="input1" type="number" placeholder="Informe o valor de A">
+    <input id="input2" type="number" placeholder="Informe o valor de B">
+    <input id="input3" type="number" placeholder="Informe o valor de C">
+    <button>Calcular</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let a = parseFloat(input1.value)
+      let b = parseFloat(input2.value)
+      let c = parseFloat(input3.value)
+
+      // Combinação de comparações com o operador lógico OR (||).
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        result.innerHTML = '<p>Confira os valores digitados!</p>'
+        return
+      }
+
+      let delta = b * b - 4 * a * c
+
+      if (delta < 0) {
+        result.innerHTML = '<p>Impossível calcular com delta negativo!</p>'
+        return
+      }
+
+      let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+
+      // Operador lógico de negação NOT (!).
+      if (isNaN(x1) || !isFinite(x1)) {
+        result.innerHTML = '<p>Impossível calcular as raízes!</p>'
+        return
+      }
+
+      let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+
+      result.innerHTML = `
+        <ul>
+          <li>X1: <b>${x1}</b>.</li>
+          <li>X2: <b>${x2}</b>.</li>
+        </ul>
+      `
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>
