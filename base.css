@@ -420,3 +420,11 @@ p.positive b,
 p.success b {
   font-weight: 600;
 }
+
+.women {
+  color: #0c91c5;
+}
+
+.men {
+  color: #da3dcd;
+}
