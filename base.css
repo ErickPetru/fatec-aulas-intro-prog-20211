@@ -105,6 +105,11 @@ select {
   transition-timing-function: ease-in-out;
 }
 
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
 #loading {
   display: none;
   margin: 1rem auto;
