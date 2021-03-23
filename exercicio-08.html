@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Exercício 08</h1>
-  <p>Escolha o clima atual para ver uma mensagem personalizada.</p>
+  <p>Informe seu nome e gênero e receba um cumprimento personalizado.</p>
 
   <form id="form" novalidate>
     <input id="field1" type="text" placeholder="Qual o seu nome?">
@@ -32,14 +32,19 @@
       let name = field1.value
       let gender = field2.value
 
+      field1.className = ''
+      field2.className = ''
+
       if (!name) {
         result.innerHTML = '<p class="negative">Quanta crueldade não querer me falar seu nome!</p>'
+        field1.className = 'negative'
         field1.focus()
         return
       }
 
       if (!gender) {
         result.innerHTML = '<p class="negative">E que tal selecionar o gênero conforme solicitei?</p>'
+        field2.className = 'negative'
         field2.focus()
         return
       }

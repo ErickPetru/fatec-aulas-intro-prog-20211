@@ -31,6 +31,8 @@
 
       let choice = field.value
 
+      field.className = ''
+
       if (choice === 'sunny') {
         result.innerHTML = '<p>Está bom e ensolarado lá fora. Use roupas leves! E que tal tomar um sorvete?</p>'
         document.body.style.backgroundImage = 'url("./img/weather-sunny.jpg")'
@@ -45,6 +47,7 @@
         document.body.style.backgroundImage = 'url("./img/weather-overcast.jpg")'
       } else {
         result.innerHTML = '<p class="negative">Quando eu pedir para responder algo, faça isso!</p>'
+        field.className = 'negative'
         field.focus()
         document.body.style.backgroundImage = ''
       }
