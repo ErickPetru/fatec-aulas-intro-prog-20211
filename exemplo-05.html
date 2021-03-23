@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="base.css">
+  <title>Introdução à Programação - Exemplo 05</title>
+</head>
+<body>
+  <h1>Exemplo 05</h1>
+  <p>Exibir o intervalo de números entre dois números informados.</p>
+
+  <form id="form" novalidate>
+    <input id="field1" type="number" placeholder="Informe o valor inicial">
+
+    <input id="field2" type="number" placeholder="Informe o valor final">
+
+    <button>Exibir</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let n1 = parseFloat(field1.value)
+      let n2 = parseFloat(field2.value)
+
+      field1.className = ''
+      field2.className = ''
+
+      if (isNaN(n1)) {
+        result.innerHTML = '<p class="negative">Informe um número válido no primeiro campo!</p>'
+        field1.className = 'negative'
+        field1.focus()
+        return
+      }
+
+      if (isNaN(n2)) {
+        result.innerHTML = '<p class="negative">Informe um número válido no segundo campo!</p>'
+        field2.className = 'negative'
+        field2.focus()
+        return
+      }
+
+      result.innerHTML = ''
+
+      // Dá para fazer com while, se estiver com tempo sobrando...
+      /*
+      let i = n1
+      while (i < n2) {
+        result.innerHTML += `${i}, `
+        i++
+      }
+      */
+
+      // Dá para fazer com for e fica bem enxuto.
+      for (let i = n1; i < n2; i++) {
+        result.innerHTML += `${i}, `
+      }
+
+      result.innerHTML += n2
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>
