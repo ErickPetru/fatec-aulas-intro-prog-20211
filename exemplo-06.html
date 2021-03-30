@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="base.css">
+  <title>Introdução à Programação - Exemplo 06</title>
+</head>
+<body>
+  <h1>Exemplo 06</h1>
+  <p>Usuário cadastra vários nomes em umn Array, podendo ver todos depois.</p>
+
+  <form id="form" novalidate>
+    <input id="field" type="text" placeholder="Informe um nome">
+    <button>Adicionar</button>
+  </form>
+
+  <div class="buttons">
+    <button id="showAll">Exibir todos</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    let people = []
+
+    function onSubmit(event) {
+      event.preventDefault()
+
+      let name = field.value
+
+      field.className = ''
+
+      if (!name) {
+        result.innerHTML = '<p class="negative">Por favor, informe um nome para adicionar!</p>'
+        field.className = 'negative'
+        field.focus()
+        return
+      }
+
+      result.innerHTML = ''
+      people.push(name)
+      field.value = ''
+      field.focus()
+    }
+
+    form.addEventListener('submit', onSubmit)
+
+    function onClick(event) {
+      event.preventDefault()
+
+      if (!people.length) {
+        result.innerHTML = '<p class="negative">Cadastre algum nome antes de poder exibir.</p>'
+        field.focus()
+        return
+      }
+
+      let items = ''
+      for (let i = 0; i < people.length; i++) {
+        items += `<li>${people[i]}</li>`
+      }
+
+      result.innerHTML = `<ul>${items}</ul>`
+    }
+
+    showAll.addEventListener('click', onClick)
+  </script>
+</body>
+</html>
