@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  <link rel="stylesheet" href="popbox.css">
+  <link rel="stylesheet" href="base.css">
+  <title>Introdução à Programação - Exemplo 08</title>
+</head>
+<body>
+  <h1>Exemplo 08</h1>
+  <p>Utilizando bibliotecas externas incrementando esta tela.</p>
+
+  <form id="form">
+    <input id="field1" type="number" placeholder="Preço base do produto" autocomplete="off">
+    <input id="field2" type="number" placeholder="Percentual de desconto" autocomplete="off">
+    <input id="field3" placeholder="Data da compra" autocomplete="off" readonly>
+    <button>Calcular</button>
+  </form>
+
+  <div id="result"></div>
+
+  <div data-popbox-id="dialog" class="popbox">
+    <div class="popbox_container">
+      Campo obrigatório não preenchido!
+      <button data-popbox-close="dialog">Fechar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script src="./popbox.js"></script>
+  <script src="./exemplo-08.js"></script>
+</body>
+</html>
