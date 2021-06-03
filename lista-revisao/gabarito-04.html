@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../base.css">
+  <title>Introdução à Programação - Gabarito da Revisão 04</title>
+</head>
+<body>
+  <h1>Gabarito da Revisão 04</h1>
+  <p>Uma tela com duas áreas, a primeira delas para o usuário informar o nome de um aluno e sua nota final (com casas decimais, sendo o menor valor permitido zero e o maior valor permitido dez) e ir adicionando à memória, a segunda delas com três botões. Um botão para exibir qual aluno teve a maior nota, outro botão para exibir qual teve a menor nota e outro botão para exibir a média aritmética de notas da turma como um todo.</p>
+
+  <form id="form" novalidate>
+    <input id="field1" placeholder="Nome do aluno" autocomplete="off" required>
+    <input id="field2" type="number" placeholder="Nota final" autocomplete="off" required>
+    <button>Adicionar</button>
+  </form>
+
+  <div class="buttons">
+    <button id="showBestStudent">Melhor aluno</button>
+    <button id="showWorstStudent">Pior aluno</button>
+    <button id="showAverageGrade">Média aritmética da turma</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="./gabarito-04.js"></script>
+</body>
+</html>

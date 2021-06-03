@@ -126,6 +126,11 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 0 2rem;
   margin: 0 0 1.5rem;
   width: 100%;
+  display: flex;
+}
+
+.buttons button {
+  flex: 1 1 33.3334%;
 }
 
 form {
